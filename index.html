@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+<head>
+    <title>Dicer | Diceware Password Generator</title>
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+     <!--  <div class="header clearfix">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li role="presentation" class="active"><a href="#">Home</a></li>
+            <li role="presentation"><a href="#">Tools</a></li>
+            <li role="presentation"><a href="#">Security</a></li>
+            <li role="presentation"><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+        <h3 class="text-muted">Dicer - The Diceware Password Generator</h3>
+      </div> -->
+    <h1>Generate a truly secure passphrase!</h1>
+    <p class="lead">A passphrase is easier to remember, and harder to crack than a password.</p>
+    <p>Our generator randomly chooses from two diceware word lists, and outputs a passphrase from 4 to 20 words in length.</p>
+    <p>We are using the Diceware and Beale word lists to generate your password. The passphrase generation takes place in the browser and never is sent to a server. Using this passphrase creation method, a hacker, using a brute force attack, would have to spend up to 50 years to crack a 7 word passphrase. That's if he's using the correct word list. Visit <a href="http://diceware.com">diceware.com</a> for more details.</p>
+
+      <div class="row marketing">
+        <div class="col-lg-6">
+          <h4>Passphrase options</h4>
+          <p>
+              <form action="" type="">
+                <div class="form-group">
+                    <label for="length">Passphrase Length</label>
+                    <select class="form-control" name="length" id="length">
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="sep">Separator</label>
+                    <input type="text" class="form-control" id="sep" placeholder="Defaults to space">
+                    <p class="help-block">Defaults to a space. Example with spaces: [abase jockey clint rise]. Example with &: [abase&jockey&clint&rise]</p>
+                </div>
+                <a class="btn btn-default" onclick="submit()">Submit</a>
+              </form>
+          </p>
+        </div>
+
+        <div class="col-lg-6">
+          <h4>Your new passphrase</h4>
+          <p id="result" style="font-weight: bold; background: #ddd; padding:10px;"></p>
+        </div>
+      </div>
+
+      <footer class="footer">
+        <p>&copy; Lucien Consulting, INC 2015</p>
+      </footer>
+
+    </div> <!-- /container -->
+    <script src="dicer.min.js"></script>
+    <script>
+        var submit = function() {
+            var length = document.getElementById('length').value,
+                sep = document.getElementById('sep').value;
+
+            dicer.run(length, sep, 'result');
+        };
+    </script>
+</body>
+</html>
